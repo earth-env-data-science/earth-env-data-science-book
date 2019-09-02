@@ -1,0 +1,10 @@
+*~
+._*
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.py[cod]
+*.pid
+*.ipynb_checkpoints
+output
