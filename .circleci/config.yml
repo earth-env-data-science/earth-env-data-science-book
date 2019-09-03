@@ -109,7 +109,7 @@ jobs:
 
 # Tell CircleCI to use this workflow when it builds the site
 workflows:
-  version: 2.0
+  version: 2
   default:
     jobs:
       - build_markdown
