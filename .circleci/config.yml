@@ -25,10 +25,12 @@ jobs:
             rm -rf *
             cp -r /tmp/workspace/_site/* .
             touch .nojekyll
+            ls -a
 
       - run:
           name: Commit results and push to gh-pages
           command: |
+            cd target
             git config --global user.name "circleci"
             git add -A
             git commit -m "jekyll book web deploy"
