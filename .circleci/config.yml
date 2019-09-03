@@ -4,19 +4,33 @@ jobs:
     docker:
       - image: circleci/python:3.6-stretch
     steps:
-      - checkout
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /tmp/workspace
+
       # Add deployment key fingerprint for CircleCI to use for a push
       - add_ssh_keys:
           fingerprints:
-            - "25:11:c6:86:6a:aa:66:ed:d9:56:b0:df:51:ca:f4:18"
+            - "2f:40:72:72:6a:d5:43:08:1e:42:a4:30:03:e3:f1:05"
 
-      # Push to the inferentialthinking.github.io repository so it goes live
-      - run: git remote add live_textbook git@github.com:earth-env-data-science/earth-env-data-science.github.io.git
       - run:
-          name: Updating earth-env-data-science website
-          command: git push live_textbook gh-pages:master
+          name: Check out target repo and replace content
+          command: |
+            git clone git@github.com:earth-env-data-science/earth-env-data-science.github.io.git target
+            cd target
+            rm -rf *
+            cp -r /tmp/workspace/_site/* .
+            touch .nojekyll
 
-  demo_site:
+      - run:
+          name: Commit results and push to gh-pages
+          command: |
+            git config --global user.name "circleci"
+            git add -A
+            git commit -m "jekyll book web deploy"
+            git push -f origin master
+
+  build_html:
     docker:
       - image: circleci/ruby:2.6
     steps:
@@ -51,16 +65,12 @@ jobs:
 
       - run:
           name: Build the website
-          command: bundle exec jekyll build --baseurl /earth-env-data-science-book/
+          command: bundle exec jekyll build
 
-      # Tell Circle to store the documentation output in a folder that we can access later
-      - store_artifacts:
-          path: ./_site/
-          destination: html
-
-      - store_artifacts:
-          path: ./_build/
-          destination: _build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./_site/
 
   build_markdown:
     docker:
@@ -99,23 +109,17 @@ jobs:
 
 # Tell CircleCI to use this workflow when it builds the site
 workflows:
-  version: 2
+  version: 2.1
   default:
     jobs:
+      - build_markdown
+      - build_html:
+          requires:
+            - build_markdown
       - deploy:
+          requires:
+            - build_html
           filters:
             branches:
               only:
-                - gh-pages
-      - build_markdown:
-          filters:
-            branches:
-              ignore:
-                - gh-pages
-      - demo_site:
-          requires:
-            - build_markdown
-          filters:
-              branches:
-                ignore:
-                  - gh-pages
+                - master
