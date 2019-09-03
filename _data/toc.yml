@@ -43,6 +43,10 @@
   url: /lectures/environment/intro_to_unix
 - title: Intro to Git
   url: /lectures/environment/intro_to_git
+  expand_sections: true
+  sections:
+    - title: "Assignment: Files, Git, and Github"
+      url: /assignments/files_markdown_git
 
 - header: The Core Python Language
 - title: Python Fundamentals
