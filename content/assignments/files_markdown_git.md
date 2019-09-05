@@ -34,7 +34,7 @@ Now go back to the terminal and do the following:
 
 Finally, go back to the editor and add a new subsection called "Research Interests" to your `Readme.md` file. Update your local git repository and push your changes to GitHub. Verify that the remote repository is updated.
 
-To "hand in" this part of the assignment, just provide the link to your repository in the notebook cell below.
+To "hand in" this part of the assignment, put a link to it in the `Readme.md` file in the next part.
 
 
 ## Create your Assignments Repository
@@ -42,7 +42,7 @@ To "hand in" this part of the assignment, just provide the link to your reposito
 Now that you know how to create a git repository, you should create your assignments repository.
 
 - Create a new directory called `rces-assignments` in your home directory.
-- Create a `Readme.md` markdown file that contains your name
+- Create a `Readme.md` markdown file that contains your name and a link to your "resume" repo.
 - Initialize a new git repository 
 - Add the file and make your first commit
 - Create a new **private** repository on GitHub called `rces-assignments`. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)
