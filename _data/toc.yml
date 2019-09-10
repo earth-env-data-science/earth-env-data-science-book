@@ -53,6 +53,10 @@
   url: /lectures/core_python/python_fundamentals
 - title: Functions and Classes
   url: /lectures/core_python/functions_classes
+  expand_sections: true
+  sections:
+    - title: "Assignment: Python Basics and Functions"
+      url: /assignments/python_basics_and_functions
 - title: Organization and Packaging of Python Projects
   url: /lectures/core_python/organization_and_packaging
 
