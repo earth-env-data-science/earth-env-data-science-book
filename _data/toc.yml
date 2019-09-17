@@ -62,7 +62,7 @@
 
 - header: Scientific Python Fundamentals
 - title: Numpy and Matplotlib
-  url: /lectures/basic_scipy/numpy_and_matplotlib
+  url: /lectures/basic_scipy/numpy_matplotlib
   expand_sections: true
   sections:
     - title: "Assignment: Basic Numpy and Matplotlib"
