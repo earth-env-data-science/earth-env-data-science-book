@@ -94,7 +94,7 @@ jobs:
 
       # Install the packages needed to build our documentation
       # This will depend on your particular package!
-      - run: pip install --user jupyter-book
+      - run: pip install --user jupyter-book==0.5.2
 
       # Cache some files for a speedup in subsequent builds
       - save_cache:
