@@ -63,7 +63,7 @@ Revert a file to an earlier version:
 ## Collaborating with Git and Github
 
 * Create a new repository on GitHub
-* Follow the instructions and run `git remote add <repo url>` on your local repo
+* Follow the instructions and run `git remote add origin <repo url>` on your local repo
 * make your changes and stage them with `git add`,
 * commit your changes with `git commit -m`, and
 * upload the changes to GitHub with` git push origin master`
