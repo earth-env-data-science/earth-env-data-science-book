@@ -69,6 +69,10 @@
       url: /assignments/numpy_matplotlib
 - title: Advanced Matplotlib
   url: /lectures/basic_scipy/more_matplotlib
+  expand_sections: true
+  sections:
+    - title: "Assignment: More Matplotlib"
+      url: /assignments/more_matplotlib
 
 
 - header: High Level Data Analysis Frameworks
