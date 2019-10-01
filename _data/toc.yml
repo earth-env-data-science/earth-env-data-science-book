@@ -83,7 +83,7 @@
   sections:
     - title: Pandas Fundamentals
       url: /lectures/pandas/basic_pandas
-    - title: Assignment 1: Pandas Fundamentals with Earthquake Data
+    - title: "Assignment: Pandas Fundamentals with Earthquake Data"
       url: /assignments/basic_pandas
     - title: The Split-Apply-Combine Workflow
       url: /lectures/pandas/pandas_groupby
