@@ -87,6 +87,8 @@
       url: /assignments/basic_pandas
     - title: The Split-Apply-Combine Workflow
       url: /lectures/pandas/pandas_groupby
+    - title: "Assignment: Pandas Groupby with Hurrican Data"
+      url: /assignments/pandas_groupby
 
 
 - title: Xarray for Multidimensional Data
