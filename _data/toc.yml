@@ -95,8 +95,10 @@
   url: /lectures/xarray/xarray_intro
   expand_sections: true
   sections:
-  - title: Basic Xarray
+  - title: Xarray Fundamentals
     url: /lectures/xarray/xarray
+  - title: "Assignment: Xarray Fundamentals with Earth Radiation Data"
+    url: /assignments/basic_xarray
   - title: Intermediate Xarray
     url: /lectures/xarray/xarray-part2
   - title: Xarray Tips And Tricks
