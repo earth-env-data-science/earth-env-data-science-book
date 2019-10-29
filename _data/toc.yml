@@ -105,3 +105,13 @@
     url: /assignments/xarray_groupby
   - title: Xarray Tips And Tricks
     url: /lectures/xarray/xarray_tips_and_tricks
+
+- header: Geoscience Packages
+
+- title: Making Maps with Cartopy
+  url: /lectures/mapping_cartopy
+  expand_sections: true
+  sections:
+  - title: "Assignment: Maps with Cartopy"
+    url: /assignments/cartopy
+
