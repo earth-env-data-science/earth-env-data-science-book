@@ -161,7 +161,6 @@ full-featured scientific Python environment with a set of packages curated for t
 geosciences. Copy and paste the following ``environment.yml`` file somewhere
 on your local hard drive:
 
-    :::yaml
     name: rces
     channels:
         - conda-forge
