@@ -189,7 +189,7 @@ on your local hard drive:
         - seaborn       # Statistical visualizations
         - tqdm          # Nice progress bar for longer computations
         - xarray        # N-d labeled array library
-        - xesfm         # Geographical regridding based on ESMF
+        - xesmf         # Geographical regridding based on ESMF
         - xgcm          # Tools for working with finite-volume grids
         - zarr          # Array storage library
         - numcodecs     # Compression library used by zarr
