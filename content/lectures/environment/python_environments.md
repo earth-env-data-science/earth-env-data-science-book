@@ -1,11 +1,7 @@
-Title: Python Environments
-Date: 2018-11-01
-Category: lectures
-Tags: python, conda, environments
+# Managing Python Environments
 
 _Note: many elements in this guide are adapted from
-[Daniel Rothenberg](http://danielrothenberg.com/)'s
-excellent
+[Daniel Rothenberg](http://danielrothenberg.com/)'s excellent
 [getting started guide](http://danielrothenberg.com/gcpy/getting_started.html)._
 
 ## Python
@@ -40,7 +36,7 @@ installation.
 **Should I use Python 2 or Python 3?**
 
 You should use Python 3. The majority of the scientific Python packages are
-[moving to only support Python 3](http://www.python3statement.org/) in the
+[now support only Python 3](http://www.python3statement.org/) in the
 near future without any backwards compatibility. The differences between
 Python 2 and Python 3 are mostly superficial, but large enough that it is
 cumbersome to maintain large codebases that are compatible with both. With the
@@ -76,7 +72,7 @@ lightweight alternative installation method.
   You'll probably need to do this from the command line, e.g.
 
         $ sh Miniconda3-latest-MacOSX-x86_64.sh
-      
+
   Follow the instructions; you can choose where to place the installation (
   preferably somewhere you have write access without super-user/root access,
   like your home directory). At the end of this process, add this path to your
@@ -103,11 +99,11 @@ guide.
 
 To create a conda environment, you execute the following command:
 
-    $ conda create --name my_environment python=3.6 numpy
+    $ conda create --name my_environment python=3.7 numpy
 
 This will create a special environment in ``$MINICONDA_HOME/envs/my_environment``
 with only Python and numpy to begin with. Here, we've also told conda to install
-Python version 3.6; you can specify exact versions or minima, and conda will
+Python version 3.7; you can specify exact versions or minima, and conda will
 take care of figuring out all the compatibilties between versions for you. To use
 this environment, simply "activate" it by executing:
 
@@ -157,16 +153,15 @@ geosciences. Copy and paste the following ``environment.yml`` file somewhere
 on your local hard drive:
 
     :::yaml
-    name: geo_scipy
+    name: rces
     channels:
         - conda-forge
         - defaults
     dependencies:
-        - python=3.6    # Python version 3.6
+        - python=3.7    # Python version 3.7
         - basemap       # mapping package
         - bottleneck    # C-optimized array functions for NumPy
         - cartopy       # Geographic plotting toolkit
-        - cython        # Transpile Python->C
         - dask          # Parallel processing library
         - h5py          # Wrapper for HDF5
         - ipython       # IPython interpreter and tools
@@ -175,6 +170,7 @@ on your local hard drive:
         - matplotlib    # 2D plotting library
         - netcdf4       # Wrapper for netcdf4
         - numpy         # N-d array and numerics
+        - numba         # For speeding up python code
         - pandas        # Labeled array library
         - proj4         # geographic projections
         - pyresample    # Geographic resampling tools
@@ -185,6 +181,8 @@ on your local hard drive:
         - seaborn       # Statistical visualizations
         - tqdm          # Nice progress bar for longer computations
         - xarray        # N-d labeled array library
+        - xesfm         # Geographical regridding based on ESMF
+        - xgcm          # Tools for working with finite-volume grids
         - zarr          # Array storage library
         - numcodecs     # Compression library used by zarr
         - gcsfs         # Access data from Google Cloud Storage
@@ -199,11 +197,11 @@ nicely and work with all of its components.)
 
 Create this environment through **conda**
 
-    $ conda env create -f /path/to/environment.yml
+    $ conda env create -f environment.yml
 
 Activate this environment
 
-    $ source activate geo_scipy
+    $ source activate rces
 
 This environment should be sufficient for all of your work in this class.
 
@@ -268,7 +266,7 @@ You can also use ``pip`` to install code you've downloaded:
     $ pip install -e .
 
 This will automatically call **setup.py** for you. The "**-e**" flag will
-install the package in "editable" mode, which means that any chane you make
+install the package in "editable" mode, which means that any change you make
 to the source code will automatically be recognized when you load the package
 in Python; this is *especially* useful when you're developing code.
 
