@@ -57,6 +57,15 @@ In addition to the packages themselves, Anaconda includes a graphical
 utility to help manage any packages you may want to install which are not
 already included in the default inclusion list.
 
+## Accessing the Command Line
+
+These notes assume you have access to a Unix command line to type in shell commands.
+For Linux and MacOS users, you can access the command line by opening the _terminal_ program.
+It's more difficult for Windows users.
+For Windows users, you should first install Anaconda (described above) or Miniconda (described below), which gives you access to the "Anaconda Prompt" desktop app.
+(Instructions for this are given on the [Andaconda Website](https://docs.anaconda.com/anaconda/user-guide/getting-started/#write-a-python-program-using-anaconda-prompt-or-terminal).)
+From the Anaconda Prompt, you should be able to run `conda` and other shell commands.
+
 ## Lightweight Alternative: Miniconda
 
 If you are installing python on a remote machine via ssh, or you simply don't
