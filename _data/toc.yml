@@ -116,3 +116,8 @@
   sections:
   - title: "Assignment: Maps with Cartopy"
     url: /assignments/cartopy
+
+- title: Working with output from general circulation models using xesmf and xgcm
+  url: /lectures/working_with_gcm_data
+  expand_sections: true
+
