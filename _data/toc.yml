@@ -47,6 +47,8 @@
   sections:
     - title: "Assignment: Files, Git, and Github"
       url: /assignments/files_markdown_git
+- title: Managing Environments
+  url: /lectures/environment/python_environments
 
 - header: The Core Python Language
 - title: Python Fundamentals
@@ -118,3 +120,4 @@
 - title: Working with output from general circulation models using xesmf and xgcm
   url: /lectures/working_with_gcm_data
   expand_sections: true
+
