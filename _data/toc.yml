@@ -119,5 +119,13 @@
 
 - title: Working with output from general circulation models using xesmf and xgcm
   url: /lectures/working_with_gcm_data
+
+- header: Big Data
+
+- title: Dask
+  url: /lectures/dask/intro
   expand_sections: true
+  sections:
+  - title: "Dask Arrays and Xarray Integration"
+    url: /lectures/dask/dask_arrays
 
