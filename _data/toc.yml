@@ -49,6 +49,9 @@
       url: /assignments/files_markdown_git
 - title: Managing Environments
   url: /lectures/environment/python_environments
+- title: Sharing Reproducible Science with Binder
+  url: /lectures/environment/binder
+
 
 - header: The Core Python Language
 - title: Python Fundamentals
