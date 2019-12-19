@@ -38,42 +38,42 @@
 - header: The Interactive Computing Environment
 
 - title: Intro to JupyterLab
-  url: /lectures/environment/intro_to_jupyterlab
+  url: /lectures/environment/010_intro_to_jupyterlab
 - title: Intro to Unix
-  url: /lectures/environment/intro_to_unix
+  url: /lectures/environment/020_intro_to_unix
 - title: Intro to Git
-  url: /lectures/environment/intro_to_git
+  url: /lectures/environment/030_intro_to_git
   expand_sections: true
   sections:
     - title: "Assignment: Files, Git, and Github"
       url: /assignments/files_markdown_git
 - title: Managing Environments
-  url: /lectures/environment/python_environments
+  url: /lectures/environment/040_python_environments
 - title: Sharing Reproducible Science with Binder
-  url: /lectures/environment/binder
+  url: /lectures/environment/050_binder
 
 
 - header: The Core Python Language
 - title: Python Fundamentals
-  url: /lectures/core_python/python_fundamentals
+  url: /lectures/core_python/010_python_fundamentals
 - title: Functions and Classes
-  url: /lectures/core_python/functions_classes
+  url: /lectures/core_python/020_functions_classes
   expand_sections: true
   sections:
     - title: "Assignment: Python Basics and Functions"
       url: /assignments/python_basics_and_functions
 - title: Organization and Packaging of Python Projects
-  url: /lectures/core_python/organization_and_packaging
+  url: /lectures/core_python/030_organization_and_packaging
 
 - header: Scientific Python Fundamentals
 - title: Numpy and Matplotlib
-  url: /lectures/basic_scipy/numpy_and_matplotlib
+  url: /lectures/basic_scipy/010_numpy_and_matplotlib
   expand_sections: true
   sections:
     - title: "Assignment: Basic Numpy and Matplotlib"
       url: /assignments/numpy_matplotlib
 - title: Advanced Matplotlib
-  url: /lectures/basic_scipy/more_matplotlib
+  url: /lectures/basic_scipy/020_more_matplotlib
   expand_sections: true
   sections:
     - title: "Assignment: More Matplotlib"
@@ -83,38 +83,38 @@
 - header: High Level Data Analysis Frameworks
 
 - title: Pandas for Tabular Data
-  url: /lectures/pandas/pandas_intro
+  url: /lectures/pandas/010_pandas_intro
   expand_sections: true
   sections:
     - title: Pandas Fundamentals
-      url: /lectures/pandas/basic_pandas
+      url: /lectures/pandas/020_basic_pandas
     - title: "Assignment: Pandas Fundamentals with Earthquake Data"
       url: /assignments/basic_pandas
     - title: The Split-Apply-Combine Workflow
-      url: /lectures/pandas/pandas_groupby
+      url: /lectures/pandas/030_pandas_groupby
     - title: "Assignment: Pandas Groupby with Hurrican Data"
       url: /assignments/pandas_groupby
 
 
 - title: Xarray for Multidimensional Data
-  url: /lectures/xarray/xarray_intro
+  url: /lectures/xarray/010_xarray_intro
   expand_sections: true
   sections:
   - title: Xarray Fundamentals
-    url: /lectures/xarray/xarray
+    url: /lectures/xarray/020_xarray
   - title: "Assignment: Xarray Fundamentals with Earth Radiation Data"
     url: /assignments/basic_xarray
   - title: Intermediate Xarray
-    url: /lectures/xarray/xarray-part2
+    url: /lectures/xarray/021_xarray-part2
   - title: "Assignment: Xarray Groupby and SST Data"
     url: /assignments/xarray_groupby
   - title: Xarray Tips And Tricks
-    url: /lectures/xarray/xarray_tips_and_tricks
+    url: /lectures/xarray/030_xarray_tips_and_tricks
 
 - header: Geoscience Packages
 
 - title: Making Maps with Cartopy
-  url: /lectures/mapping_cartopy
+  url: /lectures/maps/mapping_cartopy
   expand_sections: true
   sections:
   - title: "Assignment: Maps with Cartopy"
@@ -126,9 +126,8 @@
 - header: Big Data
 
 - title: Dask
-  url: /lectures/dask/intro
+  url: /lectures/dask/010_intro
   expand_sections: true
   sections:
   - title: "Dask Arrays and Xarray Integration"
-    url: /lectures/dask/dask_arrays
-
+    url: /lectures/dask/020_dask_arrays
