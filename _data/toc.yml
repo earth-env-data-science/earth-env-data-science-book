@@ -30,6 +30,8 @@
 - title: Intro
   url: intro
   not_numbered: True
+- title: Final Projects
+  url: projets
 - title: License
   url: LICENSE
   not_numbered: True
@@ -131,4 +133,3 @@
   sections:
   - title: "Dask Arrays and Xarray Integration"
     url: /lectures/dask/dask_arrays
-
