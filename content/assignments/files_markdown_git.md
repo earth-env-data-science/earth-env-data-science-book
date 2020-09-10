@@ -28,7 +28,7 @@ Now go back to the terminal and do the following:
 1. Add the `Readme.md` file to the repository
 1. Create a new commit with a commit message
 1. Check the git log to see your commit history
-1. Go to github and create a [new public repository](https://github.com/new) entitled `resume`
+1. Go to GitHub and create a [new public repository](https://github.com/new) entitled `resume`
 1. Push your local resume repository to GitHub following the instructions.
 1. View your online resume at `http://github.com/<your github username>/resume`
 
@@ -46,6 +46,6 @@ Now that you know how to create a git repository, you should create your assignm
 - Initialize a new git repository 
 - Add the file and make your first commit
 - Create a new **private** repository on GitHub called `rces-assignments`. (Call it exactly like that. Do not vary the spelling, capitalization, or punctuation.)
-- Push your `rces-assignments` repository to github
-- On github, go to "settings" -> "collaborators" and add `tjcrone` and `taoma0528`.
+- Push your `rces-assignments` repository to GitHub
+- On GitHub, go to "settings" -> "collaborators" and add `tjcrone` and `taoma0528`.
 - Push new commits to this repository whenever you are ready to hand in your assignments
