@@ -32,6 +32,7 @@
   not_numbered: True
 - title: Final Projects
   url: projects
+  not_numbered: True
 - title: License
   url: LICENSE
   not_numbered: True
