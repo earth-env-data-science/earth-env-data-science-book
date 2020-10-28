@@ -109,7 +109,7 @@
   - title: Intermediate Xarray
     url: /lectures/xarray/xarray-part2
   - title: "Assignment: Xarray Groupby and SST Data"
-    url: /assignments/xarray_groupby
+    url: /assignments/more_xarray
   - title: Xarray Tips And Tricks
     url: /lectures/xarray/xarray_tips_and_tricks
 
