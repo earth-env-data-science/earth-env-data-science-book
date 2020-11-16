@@ -60,7 +60,7 @@ For instructors wishing to re-create the final project experience, below we incl
 The goal of the final project is to assess your ability to combine and apply the skills you have learned in class in the context of a real-world research problem. Our class has mostly focused on tools for data analysis and visualization, so this must be the focus of your final project. Specifically, we seek to assess your ability to do the following tasks:
 
 *   Discover and download real datasets in standard formats (e.g. CSV, netCDF)
-*   Load the data into pandas or xarray, performing any necessary data cleanup (dealing with missing values, proper time encoding, etc.) along the way.
+*   Load the data into Pandas or Xarray, performing any necessary data cleanup (dealing with missing values, proper time encoding, etc.) along the way.
 *   Perform realistic scientific calculation involving, for example tasks such as grouping, aggregating, and applying mathematical formulas.
 *   Visualize your results in well-formatted plots.
 
@@ -96,7 +96,7 @@ Your final project must meet the following technical requirements
 *   Notebook must execute in sequence with no errors
 *   The whole github repo must be configured to run on [mybinder.org](https://mybinder.org/) or, for analysis involving dask, [binder.pangeo.io](http://binder.pangeo.io/)
 
-You _must_ use either pandas or xarray (or both) in some part of your project. You _may_ use other scientific python libraries as well, if you wish, to facilitate some analysis that is not possible with xarray / pandas alone. Some libraries you may wish to consider are:
+You _must_ use either Pandas or Xarray (or both) in some part of your project. You _may_ use other scientific python libraries as well, if you wish, to facilitate some analysis that is not possible with Xarray / Pandas alone. Some libraries you may wish to consider are:
 
 *   [SciPy](https://docs.scipy.org/doc/scipy/reference/) for interpolation, signal processing, spectral analysis, linear algebra, and other general purpose scientific computing routines
 *   [Statsmodels](https://github.com/statsmodels/statsmodels) for advanced statistical analysis
@@ -111,11 +111,11 @@ You _must_ use either pandas or xarray (or both) in some part of your project.
 
 ### Project Approval
 
-You must have your dataset(s) and general scope for your project improved by the instructor. This must be done by Tuesday, Nov. 19. The approval process works like this:
+You must have your dataset(s) and general scope for your project improved by the instructor. The approval process works like this:
 
 *   Create a new public github repo for your project
 *   Add a `README.md` file which contains the scientific question / hypothesis you plan to investigate, links to the relevant datasets, and a three sentence summary of the analysis you plan to do.
-*   Submit your proposal via this web form: [https://forms.gle/SJegQuBwfSY8NXhN9](https://forms.gle/SJegQuBwfSY8NXhN9) 
+*   Submit a link to your project repo using the method indicated by the instructor. 
 
 ### In-Class Presentations
 
