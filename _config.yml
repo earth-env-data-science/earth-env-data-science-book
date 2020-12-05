@@ -49,17 +49,19 @@ use_jupyterlab: true                     # If 'true', interact links will use Ju
 
 # Jupyterhub link settings
 use_jupyterhub_button: true              # If 'true', display a button that will direct users to a JupyterHub (that you provide)
-jupyterhub_url: 'https://ocean.pangeo.io'     # The URL for your JupyterHub. If no URL, use ""
-jupyterhub_interact_text: ocean.pangeo.io             # The text that interact buttons will contain.
+jupyterhub_url: 'https://us-central1-b.gcp.pangeo.io/'     # The URL for your JupyterHub. If no URL, use ""
+jupyterhub_interact_text: us-central1-b.gcp.pangeo.io             # The text that interact buttons will contain.
 
 # Binder link settings
-use_binder_button: false                 # If 'true', add a binder button for interactive links
-binderhub_url: https://mybinder.org                        # The URL for your BinderHub. If no URL, use ""
+use_binder_button: true                 # If 'true', add a binder button for interactive links
+binderhub_url: https://binder.pangeo.io                        # The URL for your BinderHub. If no URL, use ""
 binder_repo_base: https://github.com/                     # The site on which the textbook repository is hosted
 binder_repo_org: earth-env-data-science                     # The username or organization that owns this repository
 binder_repo_name: earth-env-data-science-book                        # The name of the repository on the web
 binder_repo_branch: master                   # The branch on which your textbook is hosted.
 binderhub_interact_text: Interact              # The text that interact buttons will contain.
+
+# https://binder.pangeo.io/v2/gh/pangeo-gallery/default-binder/53de928?urlpath=git-pull?repo=https://github.com/earth-env-data-science/earth-env-data-science-book%26amp%3Burlpath=lab/tree/earth-env-data-science-book/content
 
 # Thebelab settings
 use_thebelab_button: false                # If 'true', display a button to allow in-page running code cells with Thebelab
