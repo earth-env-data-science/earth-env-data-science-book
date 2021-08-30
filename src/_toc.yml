@@ -1,0 +1,57 @@
+format: jb-book
+root: intro
+parts:
+- caption: About this Book
+  chapters:
+  - file: LICENSE
+  - file: projects
+
+- caption: The Interactive Computing Environment
+  chapters:
+  - file: lectures/environment/intro_to_jupyterlab
+  - file: lectures/environment/intro_to_unix
+  - file: lectures/environment/intro_to_git
+  - file: /assignments/files_markdown_git
+  - file: lectures/environment/python_environments
+  - file: lectures/environment/binder
+
+- caption: The Core Python Language
+  chapters:
+  - file: lectures/core_python/python_fundamentals
+  - file: lectures/core_python/functions_classes
+  - file: /lectures/core_python/organization_and_packaging
+  - file: assignments/python_basics_and_functions
+
+- caption: Scientific Python Fundamentals
+  chapters:
+  - file: lectures/basic_scipy/numpy_and_matplotlib
+  - file: assignments/numpy_matplotlib
+  - file: lectures/basic_scipy/more_matplotlib
+  - file: assignments/more_matplotlib
+
+- caption: High Level Data Analysis Frameworks
+  chapters:
+  - file: lectures/pandas/pandas_intro
+    sections:
+    - file: lectures/pandas/basic_pandas
+    - file: assignments/basic_pandas
+    - file: lectures/pandas/pandas_groupby
+    - file: assignments/pandas_groupby
+  - file: lectures/xarray/xarray_intro
+    sections:
+    - file: lectures/xarray/xarray
+    - file: assignments/basic_xarray
+    - file: lectures/xarray/xarray-part2
+    - file: assignments/more_xarray
+    - file: lectures/xarray/xarray_tips_and_tricks
+
+- caption: Geoscience Package
+  chapters:
+  - file: lectures/mapping_cartopy
+  - file: assignments/cartopy
+  - file: lectures/working_with_gcm_data
+
+- caption: Big Data
+  chapters:
+  - file: lectures/dask/intro
+  - file: lectures/dask/dask_arrays
