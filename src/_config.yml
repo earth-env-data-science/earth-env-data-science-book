@@ -25,6 +25,10 @@ description: >-
 baseurl: /               # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
 url: http://earth-env-data-science.github.io              # the base hostname & protocol for your site, e.g. http://example.com
 
+only_build_toc_files: true
+
+execute:
+  execute_notebooks: 'off'
 
 #######################################################################################
 # Jupyter Book settings
@@ -97,54 +101,6 @@ images_url: /assets/images                   # Path to static image files
 css_url: /assets/css                      # Path to static CSS files
 js_url: /assets/js                       # Path to JS files
 custom_static_url: /assets/custom            # Path to user's custom CSS/JS files
-
-
-#######################################################################################
-# Jekyll build settings (only modify if you know what you're doing)
-
-# Site settings
-defaults:
-- scope:
-    path: ''
-  values:
-    layout: default
-    toc: true
-    toc_label: '  On this page'
-    toc_icon: list-ul
-
-favicon_path: images/logo/favicon.ico
-
-# Markdown Processing
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-sass:
-  style: compressed
-
-collections:
-  build:
-    output: true
-    permalink: /:path.html
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-exclude:
-- README.md
-- scripts/
-- Gemfile
-- Gemfile.lock
-- node_modules
-- vendor/bundle/
-- vendor/cache/
-- vendor/gems/
-- vendor/ruby/
-
-plugins:
-- jekyll-redirect-from
-- jekyll-scholar
 
 # Jupyter Book version - DO NOT CHANGE THIS. It is generated when a new book is created
 jupyter_book_version: 0.5.2
