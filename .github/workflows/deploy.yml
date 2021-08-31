@@ -7,6 +7,11 @@ on:
     - master
     paths:
     - src/**
+  pull_request:
+    branches:
+    - master
+    paths:
+    - src/**
 
 # This job installs dependencies, build the book, and pushes it to gh-pages
 jobs:
@@ -35,6 +40,7 @@ jobs:
 
     # Deploy the book's HTML to earth-env-data-science.github.io
     - name: GitHub Pages action
+      if: github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
