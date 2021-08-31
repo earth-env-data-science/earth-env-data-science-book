@@ -7,4 +7,5 @@
 *.py[cod]
 *.pid
 *.ipynb_checkpoints
-output
+_build
+secrets/
