@@ -43,4 +43,4 @@ jobs:
         external_repository: earth-env-data-science/earth-env-data-science.github.io
         publish_branch: master
         publish_dir: src/_build/html
-        full_commit_message: "deploy: earth-env-data-science/earth-env-data-science-book/pull/${{github.event.issue.number}}"
+        full_commit_message: "deploy: earth-env-data-science/earth-env-data-science-book/pull/${{github.event.pull_request.number}}"
