@@ -1,19 +1,15 @@
 name: deploy-book
 
-# Trigger the workflow on push to main branch
+# Trigger the workflow on push to main branch and PRs
 on:
   push:
     branches:
     - master
-    #paths:
-    #- src/**
   pull_request:
     branches:
     - master
-    #paths:
-    #- src/**
 
-# This job installs dependencies, build the book, and pushes it to gh-pages
+# This job installs dependencies, builds the book, and deploys the html
 jobs:
   build-and-deploy-book:
     runs-on: ${{ matrix.os }}
@@ -38,7 +34,7 @@ jobs:
       run: |
         jupyter-book build src
 
-    # Deploy the book's HTML to earth-env-data-science.github.io
+    # Deploy the book's html to earth-env-data-science.github.io
     - name: GitHub Pages action
       #if: github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
