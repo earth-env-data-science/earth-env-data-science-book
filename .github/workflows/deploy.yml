@@ -5,13 +5,13 @@ on:
   push:
     branches:
     - master
-    paths:
-    - src/**
+    #paths:
+    #- src/**
   pull_request:
     branches:
     - master
-    paths:
-    - src/**
+    #paths:
+    #- src/**
 
 # This job installs dependencies, build the book, and pushes it to gh-pages
 jobs:
