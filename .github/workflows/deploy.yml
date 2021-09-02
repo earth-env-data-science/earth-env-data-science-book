@@ -38,6 +38,13 @@ jobs:
       run: |
         jupyter-book build src
 
+    # Get short hash
+    - name: Get short hash
+      id: vars
+      shell: bash
+      run: |
+        echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
     # Deploy the book's HTML to earth-env-data-science.github.io
     - name: GitHub Pages action
       #if: github.ref == 'refs/heads/master'
@@ -47,3 +54,4 @@ jobs:
         external_repository: earth-env-data-science/earth-env-data-science.github.io
         publish_branch: master
         publish_dir: src/_build/html
+        full_commit_message: "deploy: earth-env-data-science/earth-env-data-science-book/pull/${{github.event.number}}"
