@@ -36,7 +36,7 @@ jobs:
 
     # Deploy the book's html to earth-env-data-science.github.io
     - name: GitHub Pages action
-      #if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
