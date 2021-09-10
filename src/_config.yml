@@ -1,6 +1,7 @@
 title: Earth and Environmental Data Science
 author: Ryan Abernathey
 copyright: 2016-2021
+logo: eeds-logo.png
 exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 only_build_toc_files: true
 
