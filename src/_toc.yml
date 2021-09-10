@@ -19,7 +19,7 @@ parts:
   chapters:
   - file: lectures/core_python/python_fundamentals
   - file: lectures/core_python/functions_classes
-  - file: /lectures/core_python/organization_and_packaging
+  - file: lectures/core_python/organization_and_packaging
   - file: assignments/python_basics_and_functions
 
 - caption: Scientific Python Fundamentals
