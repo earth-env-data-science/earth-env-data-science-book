@@ -18,3 +18,11 @@ here, we point you to their docs. The following pages are particularly relevant:
 
 You will gain experience and familiarity with JupyterLab over the course of the
 semester as we use it in our weekly lectures and assignments.
+
+## Our Course JupyterHub
+
+[JupyterHub](https://jupyter.org/hub is multi-user Jupyter environment designed for companies, classrooms and research labs.
+The Columbia version of this course uses a cloud-based JupyterHub environment
+managed by [2i2c](https://2i2c.org/infrastructure/):
+
+[![Launch JupyterHub](https://img.shields.io/badge/jupyterhub-pangeo.2i2c.cloud-orange?style=for-the-badge&logo=jupyter)](https://pangeo.2i2c.cloud/)

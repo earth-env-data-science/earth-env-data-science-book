@@ -3,7 +3,7 @@
 ## Overview
 
 [_Version control_](https://en.wikipedia.org/wiki/Version_control) is a powerful way to organize, back up, and share with collaborators your research computing code.
-A Verson control system keeps track of a set of files and saves snapshots (i.e. _versions_, _commits_) of the files at any point in time. 
+A Verson control system keeps track of a set of files and saves snapshots (i.e. _versions_, _commits_) of the files at any point in time.
 Using version control allows you to confidently make changes to your code (any any other files), with the ability to roll back to any previous state. This help avoid filling our directories up with files that look like this:
 
     my_code.py
@@ -16,7 +16,7 @@ Version control also allows you to share code with collaborators, make simultane
 
 Version control has been used for a long time in software development.
 More recently, it has become an essential part of modern data and computational science.
-Our strong recommendation is that _all of your research code be stored in a version control system_. 
+Our strong recommendation is that _all of your research code be stored in a version control system_.
 
 The tool we will be using for version control is called [Git](https://git-scm.com).
 Git is incredibly powerful--it also has a somewhat steep learning curve.
@@ -66,5 +66,12 @@ Revert a file to an earlier version:
 * Follow the instructions and run `git remote add origin <repo url>` on your local repo
 * make your changes and stage them with `git add`,
 * commit your changes with `git commit -m`, and
-* upload the changes to GitHub with` git push origin master`
-* update your local repo with `git pull origin master`
+* upload the changes to GitHub with` git push origin main`
+* update your local repo with `git pull origin main`
+
+
+## Using Git and GitHub from Cloud JupyterHubs
+
+All of the above commands are available from our course's cloud-based JupyterHub.
+This is an excellent way to move code in and out of your cloud-based environment
+(while simultaneously backing it up.)
