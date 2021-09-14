@@ -2,8 +2,20 @@ title: Earth and Environmental Data Science
 author: Ryan Abernathey
 copyright: 2016-2021
 logo: eeds-logo.png
-exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 only_build_toc_files: true
 
 execute:
   execute_notebooks: 'off'
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/earth-env-data-science/earth-env-data-science-book 
+  path_to_book: src
+  branch: master
+
+# Launch button settings
+launch_buttons:
+  notebook_interface: jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url: "" # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url: "https://pangeo.2i2c.cloud"
