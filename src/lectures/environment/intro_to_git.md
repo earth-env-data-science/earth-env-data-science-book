@@ -59,18 +59,61 @@ Revert a file to an earlier version:
 
     git checkout <commit tag> <filenames>
 
+## Setting Up GitHub SSH Keys inside JupyterHub
+
+```{warning}
+As of August 12, 2021, GitHub [no longer supports username / password authentication](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/).
+Users must switch to personal access tokens or SSH-keys for authentication.
+```
+
+This is a very quick guide to getting your GitHub authentication set up,
+adopted from the [Carpentries GitHub Remotes lesson](https://swcarpentry.github.io/git-novice/07-github/index.html#ssh-background-and-setup).
+
+1. Open a terminal in JupyterHub
+1. Type the command
+   ```
+   ssh-keygen -t ed25519 -C "YOUR EMAIL ADDRESS GOES HERE"`
+   ```
+   (Don't just copy this text; you have to put in tour actual email address in between the quotes.) This command will create an ssh public / private key pair.
+1. Enter a password for your new SSH key and record it in a safe place.
+   This password is used to "lock" the SSH key. It can't be used without the password.
+1. Type the command
+   ```
+   cat ~/.ssh/id_ed25519.pub
+   ```
+   and copy the result. It should look something like `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJOMg813PWuWX/ilyexj2k/di1lBHwQHCHbRB6l4dV9K rpa@ldeo.columbia.edu`. (Note that this is my _real_ public key, but it is completely
+   safe to share. Without the corresponding private key it is useless.)
+1. Go to <https://github.com/settings/keys>. Click the green  button that says "New SSH Key".
+   Give your key the title "JupyterHub SSH Key for Research Computing" and paste the
+   public key from the previous step into the "Key" box.
+1. Verify that your key works by typing
+   ```
+   ssh -T git@github.com
+   ```
+   on the command like of the JupyterHub. (Note you will have to enter your SSH key password from step 3.)
+
+You should now be able to push to GitHub.
 
 ## Collaborating with Git and Github
 
 * Create a new repository on GitHub
 * Follow the instructions and run `git remote add origin <repo url>` on your local repo
+  ````{warning}
+  In order to authenticate with your SSH key from the previous section, you need use SSH-style GitHub urls.
+  When setting up a new repo, underneath where it says "Quick setup — if you’ve done this kind of thing before",
+  make sure you click the SSH box. The repo URL should look something like `git@github.com:rabernat/planets.git`
+  (NOT `https://github.com/rabernat/planets.git`).
+
+  If you already added a remote with `http://`, you can remove it by typing
+  ```
+  git remote rm origin
+  ```
+  (assuming the name of your remote is indeed `origin`.)
+  ````
 * make your changes and stage them with `git add`,
 * commit your changes with `git commit -m`, and
 * upload the changes to GitHub with` git push origin main`
 * update your local repo with `git pull origin main`
-
-
-## Using Git and GitHub from Cloud JupyterHubs
 
 All of the above commands are available from our course's cloud-based JupyterHub.
 This is an excellent way to move code in and out of your cloud-based environment
