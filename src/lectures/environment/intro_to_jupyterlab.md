@@ -19,6 +19,15 @@ here, we point you to their docs. The following pages are particularly relevant:
 You will gain experience and familiarity with JupyterLab over the course of the
 semester as we use it in our weekly lectures and assignments.
 
+## Markdown
+
+Throughout the course, we will write rich text documents using Markdown.
+Here are some useful references on Markdown syntax.
+
+- [Official Markdown Documentation](https://daringfireball.net/projects/markdown/)
+- [Markdown Guide / Basic Syntax](https://www.markdownguide.org/basic-syntax) -
+  A more user-friendly syntax guide.
+
 ## Our Course JupyterHub
 
 [JupyterHub](https://jupyter.org/hub is multi-user Jupyter environment designed for companies, classrooms and research labs.
