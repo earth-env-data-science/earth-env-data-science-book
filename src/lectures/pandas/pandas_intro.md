@@ -2,13 +2,16 @@
 
 [Pandas](http://pandas.pydata.org/) is a an open source library providing high-performance, easy-to-use data structures and data analysis tools. Pandas is particularly suited to the analysis of _tabular_ data, i.e. data that can can go into a table. In other words, if you can imagine the data in an Excel spreadsheet, then Pandas is the tool for the job.
 
-A [recent analysis](https://stackoverflow.blog/2017/09/06/incredible-growth-python/) of questions from Stack Overflow showed that python is the fastest growing and most widely used programming language in the world (in developed countries).
+A [2017 recent analysis](https://stackoverflow.blog/2017/09/06/incredible-growth-python/) of questions from Stack Overflow showed that python was the fastest growing and most widely used programming language in the world (in developed countries).
+As of 2021, the growth has now leveled off, but Python remains at the top.
 
-![python growth](https://zgab33vy595fw5zq-zippykid.netdna-ssl.com/wp-content/uploads/2017/09/growth_major_languages-1-1024x878.png)
+![python growth](SO_language_growth_2021.svg)
 
-A [follow-up analysis](https://stackoverflow.blog/2017/09/14/python-growing-quickly/) showed that this growth is driven by the data science packages such as numpy, matplotlib, and especially pandas.
+[Link to generate your own version of this figure](https://insights.stackoverflow.com/trends?tags=java%2Cc%2Cc%2B%2B%2Cpython%2Cc%23%2Cvb.net%2Cjavascript%2Cassembly%2Cphp%2Cperl%2Cruby%2Cvb%2Cswift%2Cr%2Cobjective-c)
 
-![pandas growth](https://zgab33vy595fw5zq-zippykid.netdna-ssl.com/wp-content/uploads/2017/09/related_tags_over_time-1-1024x1024.png)
+A [follow-up analysis](https://149351115.v2.pressablecdn.com/wp-content/uploads/2017/09/related_tags_over_time-1-2000x2000.png) showed that this growth is driven by the data science packages such as numpy, matplotlib, and especially pandas.
+
+![pandas growth](https://149351115.v2.pressablecdn.com/wp-content/uploads/2017/09/related_tags_over_time-1-2000x2000.png)
 
 The exponential growth of pandas is due to the fact that it _just works_. It saves you time and helps you do science more efficiently and effictively.
 
