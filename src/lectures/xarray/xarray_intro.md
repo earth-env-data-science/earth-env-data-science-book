@@ -8,9 +8,9 @@ $$ T(x, y, t) $$
 
 where $x$ is longitude, $y$ is latitude, and $t$ is time.
 
-The point of xarray is to provide pandas-level convenience for working with this type of data. 
+The point of xarray is to provide pandas-level convenience for working with this type of data.
 
-![xarray data model](https://github.com/pydata/xarray/raw/master/doc/_static/dataset-diagram.png)
+![xarray data model](http://xarray.pydata.org/en/stable/_images/dataset-diagram.png)
 
 ## Learning Goals for Xarray
 
@@ -25,7 +25,7 @@ The goals of this section include the following.
 1. Create xarray `DataArrays` and `DataSets` out of raw numpy arrays
 1. Create xarray objects with and without indexes
 1. Load xarray datasets from netCDF files and openDAP servers
-1. View and set attributes 
+1. View and set attributes
 
 #### Basic Indexing and Interpolation
 
