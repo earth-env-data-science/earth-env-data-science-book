@@ -1,6 +1,6 @@
 # Managing Python Environments
 
-_Note: many elements in this guide are adapted from
+_Note: many elements in this guide 2343 adapted from
 [Daniel Rothenberg](http://danielrothenberg.com/)'s excellent
 [getting started guide](http://danielrothenberg.com/gcpy/getting_started.html)._
 
@@ -22,7 +22,7 @@ multiple versions used to be a nightmare!
 Fortunately, the problem is solved completely by using a Python _distribution_
 and / or a Python _package manager_ (described in detail below).
 
-The only hard-and-fast rule about scientific computing in Python is this:
+One important rule about scientific computing in Python is this:
 
 **Do not use your system Python installation!**
 
@@ -33,15 +33,13 @@ Python, it's much more practical on both
 your local machine and any other computers you work with to use a specialized Python
 installation.
 
-**Should I use Python 2 or Python 3?**
-
-You should use Python 3. The majority of the scientific Python packages are
-[now support only Python 3](http://www.python3statement.org/) in the
-near future without any backwards compatibility. The differences between
-Python 2 and Python 3 are mostly superficial, but large enough that it is
-cumbersome to maintain large codebases that are compatible with both. With the
-exception of a handful of packages you may encounter which do not support
-Python 3, there is no compelling reason to use Python 2 today.
+```{note}
+Everything in this course uses Python 3, the latest version of Python.
+Python 2 is similar, but has some important differences that can make
+Python 2 code incompatible with Python 3.
+Python 2 was officially deprecated (declared obsolete) on
+[Jan 1, 2020](https://www.python.org/doc/sunset-python-2/)
+```
 
 ## Recommended Installation Method: Use Anaconda Python
 
@@ -108,12 +106,12 @@ guide.
 
 To create a conda environment, you execute the following command:
 
-    $ conda create --name my_environment python=3.7 numpy
+    $ conda create --name my_environment python=3.9 numpy
 
 This will create a special environment in ``$MINICONDA_HOME/envs/my_environment``
 with only Python and numpy to begin with. Here, we've also told conda to install
-Python version 3.7; you can specify exact versions or minima, and conda will
-take care of figuring out all the compatibilties between versions for you. To use
+Python version 3.9; you can specify exact versions or minima, and conda will
+take care of figuring out all the compatibilities between versions for you. To use
 this environment, simply "activate" it by executing:
 
     $ conda activate my_environment
@@ -121,10 +119,11 @@ this environment, simply "activate" it by executing:
 Regardless of your shell, you should now see the string ``(my_environment)``
 prepended to your prompt. Now, if you execute any Python-related tool from the
 command line, it will first search in ``$MINICONDA_HOME/envs/my_environment/bin``
-to find them. You can deactivate your environment by typing:
+to find them.
+
+You can deactivate your environment by typing:
 
     $ conda deactivate
-
 
 To see all the environments on your system:
 
@@ -153,71 +152,12 @@ configuration can be installed by executing
 
     $ conda env create -f my_environment.yml
 
-
-## Geosciences Python Environment
-
-Combining all of the previous sections, we can very easily spin-up a
-full-featured scientific Python environment with a set of packages curated for the
-geosciences. Copy and paste the following ``environment.yml`` file somewhere
-on your local hard drive:
-
-    name: rces
-    channels:
-        - conda-forge
-        - defaults
-    dependencies:
-        - python=3.7    # Python version 3.7
-        - basemap       # mapping package
-        - bottleneck    # C-optimized array functions for NumPy
-        - cartopy       # Geographic plotting toolkit
-        - dask          # Parallel processing library
-        - h5py          # Wrapper for HDF5
-        - ipython       # IPython interpreter and tools
-        - jupyter       # Jupyter federation architecture
-        - jupyterlab    # Jupyter Lab environment
-        - matplotlib    # 2D plotting library
-        - netcdf4       # Wrapper for netcdf4
-        - numpy         # N-d array and numerics
-        - numba         # For speeding up python code
-        - pandas        # Labeled array library
-        - proj4         # geographic projections
-        - pyresample    # Geographic resampling tools
-        - scipy         # Common math/stats/science functions
-        - scikit-learn  # Macine learning library
-        - scikit-image  # Image processing routines
-        - statsmodels   # Regression/modeling toolkit
-        - seaborn       # Statistical visualizations
-        - tqdm          # Nice progress bar for longer computations
-        - xarray        # N-d labeled array library
-        - xesmf         # Geographical regridding based on ESMF
-        - xgcm          # Tools for working with finite-volume grids
-        - zarr          # Array storage library
-        - numcodecs     # Compression library used by zarr
-        - gcsfs         # Access data from Google Cloud Storage
-        - s3fs          # Access data from Amazon S3
-
-(**Note:**
-Installing this environment will also install many dependencies, including
-compiled libraries. This is totally fine; even if you have these libraries
-already installed through your system package manager, **conda** will install
-and link for use in the environment a configuration which should be to play
-nicely and work with all of its components.)
-
-Create this environment through **conda**
-
-    $ conda env create -f environment.yml
-
-Activate this environment
-
-    $ source activate rces
-
-This environment should be sufficient for all of your work in this class.
-
+Below we will see an example of an environment file.
 
 ## Installing More Packages
 
 Once you have a basic Python environment, you can easily add or remove packages
-using the [conda](https://conda.io/) command line utility.
+using conda.
 Conda was created to help manage the complex dependencies and
 pre-compiled binary libraries that are necessary in scientific python.
 
@@ -253,35 +193,186 @@ This will fetch the source code, build it, and install it to wherever your
 ``$PYTHONPATH`` is set. This works in the vast majority of cases, particularly
 when the code you're installing doesn't have any compiled dependencies.
 
-If you
-can't find a package on either PyPI or conda-forge, you can always install it
+If you can't find a package on either PyPI or conda-forge, you can always install it
 directly from the source code. If the package is on github, ``pip`` already has
 an alias to do this for you:
 
     $ pip install git+https://github.com/<user>/<package-name>.git
 
-If all else fails, you can always download the source code and install it manually
-like
+## Channels and Conda Forge
 
-    $ wget https:/path/to/my/pkg/source.tar.gz
-    $ tar -xvzf source.tar.gz
-    $ cd source/
-    $ python setup.py install
+Where do conda packages come from?
+The packages are hosted on conda ["channels"](https://conda.io/projects/conda/en/latest/user-guide/concepts/channels.html). From the conda docs:
 
-You can also use ``pip`` to install code you've downloaded:
+> Conda channels are the locations where packages are stored. They serve as the base for hosting and managing packages. Conda packages are downloaded from remote channels, which are URLs to directories containing conda packages. The conda command searches a set of channels. By default, packages are automatically downloaded and updated from the default channel https://repo.anaconda.com/pkgs/ which may require a paid license, as described in the repository [terms of service](https://www.anaconda.com/terms-of-service) a commercial license. The conda-forge channel is free for all to use. You can modify what remote channels are automatically searched. You might want to do this to maintain a private or internal channel. For details, see how to modify your channel lists.
+>
+> Conda-forge is a community channel made up of thousands of contributors. Conda-forge itself is analogous to PyPI but with a unified, automated build infrastructure and more peer review of recipes.
 
-    $ cd source/
-    $ pip install -e .
+Don't be worried by the "commercial license part".
+The Anaconda channel terms of service clearly excludes all educational activities
+and all research activities at non-profit institutions from their definition of commercial usage.
+Even companies with fewer than 200 employees are excluded.
+The aim of the commercial paid license for Anaconda is to require large corporations
+which use the repository heavily to contribute financially to its maintenance and development.
+Without such contributions, Anaconda might not be able to sustain itself.
 
-This will automatically call **setup.py** for you. The "**-e**" flag will
-install the package in "editable" mode, which means that any change you make
-to the source code will automatically be recognized when you load the package
-in Python; this is *especially* useful when you're developing code.
+Despite this, we still recommend **always using the conda-forge channel for your python environments**.
+The reason are as follows:
+- Conda Forge is always free from commercial license restrictions
+- Conda Forge generally has the largest volume of packages and the most up-to-date versions
+- You can contribute your own packages to conda forge! This is not covered by this book,
+  but you can read about it in the [Conda Forge docs](https://conda-forge.org/docs/maintainer/adding_pkgs.html).
 
-Finally, you don't *have* to go through this process of installing packages. If you
-have code sitting on your disk somewhere, you can always modify the environmental
-variable ``$PYTHONPATH`` to include a path to that code, and Python will find it
-for you. However, you *should not do this* if it can be avoided, because it is
-extremely difficult (if not impossible) to be sure that any compiled code will
-link against the correct libraries it needs, and it is very hard to debug errors
-associated with mis-matched libraries/headers if you go this route.
+A simple way to use the conda forge channel is to pass the `-c` option when you run conda:
+
+    $ conda install -c conda-forge  {package_name}
+
+As shown below, you can also add conda-forge to your `environment.yml` file.
+
+## Speeding things up with Mamba
+
+In order to put together an actual python environment from your package specifications,
+conda has to solve a difficult puzzle.
+Each package specified has certain dependencies on other packages.
+For example, Xarray depends on Numpy, Pandas, and several others.
+Moreoever, each version of Xarray requires certain minimum versions of other
+packages (e.g. Xarray 0.19 requires Numpy >= 1.17 and Pandas >= 1.0).
+Other packages in your environment may have different or incompatible versions.
+Finding a combination of packages that are mutually compatible can be framed
+mathematically as a [boolean satisfiability problem](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem).
+
+The default "solver" of this problem for conda can be [slow](https://www.anaconda.com/blog/understanding-and-improving-condas-performance)
+It is not unheard of to spend 30 minutes or more solving large environments! 😱
+Fortunately, a much faster alternative called [mamba](https://github.com/mamba-org/mamba)
+has recently come out.
+To install it, just run:
+
+    conda install -n base -c conda-forge mamba
+
+Now you can install environments and packages as before, but using the `mamba` command
+instead of `conda`. Everything will be faster.
+
+
+## Pangeo Python Environment
+
+The environment on our cloud JupyterHub is a highly curated combination of packages
+maintained by the [Pangeo Project](http://pangeo.io/).
+Then environment lives at <https://github.com/pangeo-data/pangeo-docker-images/>.
+In addition to just specifying a combination of packages, this repo automatically
+builds [Docker containers](https://docs.docker.com/get-started/).
+
+The latest Pangeo notebook environment lives at <https://github.com/pangeo-data/pangeo-docker-images/blob/master/pangeo-notebook/environment.yml>.
+Below are the contents of that file as of 2021-11-04.
+Copy and paste the following ``environment.yml`` file somewhere
+on your local hard drive:
+
+    name: pangeo
+    channels:
+     - conda-forge
+    dependencies:
+     - python=3.9*
+     - pangeo-notebook=2021.09.30
+     - pip=20
+     - adlfs
+     - awscli
+     - boto3
+     - bottleneck
+     - cartopy >= 0.20.0
+     - cfgrib
+     - cmip6_preprocessing
+     - ciso
+     - dask-ml
+     - datashader
+     - descartes
+     - earthdata
+     - eofs
+     - erddapy
+     - esmpy
+     - fastjmd95
+     - fsspec
+     - fsspec-reference-maker
+     - gcsfs
+     - gh
+     - geocube
+     - geopandas
+     - geopy
+     - geoviews-core
+     - gsw
+     - h5netcdf
+     - h5py
+     - holoviews
+     - hvplot
+     - intake
+     - intake-esm
+     - intake-geopandas
+     - intake-stac
+     - intake-xarray
+     - ipyleaflet
+     - ipytree
+     - ipywidgets
+     - jupyter-panel-proxy
+     - jupyter-resource-usage
+     - lz4
+     - matplotlib-base
+     - metpy
+     - nb_conda_kernels
+     - nbstripout
+     - nc-time-axis
+     - netcdf4
+     - nomkl
+     - numcodecs
+     - numpy
+     - pandas
+     - panel
+     - parcels
+     - param!=1.11.0
+     - prefect
+     - pyarrow
+     - pycamhd
+     - pydap
+     - pygeos
+     - pystac
+     - python-blosc
+     - python-gist
+     - python-graphviz
+     - rasterio
+     - rechunker
+     - rio-cogeo
+     - rioxarray
+     - rise
+     - s3fs>0.5
+     - sat-search
+     - sat-stac
+     - satpy
+     - scikit-image
+     - scikit-learn
+     - scipy
+     - sparse
+     - stackstac
+     - tiledb-py
+     - timezonefinder
+     - xarray
+     - xarrayutils
+     - xarray_leaflet
+     - xarray-spatial
+     - xcape
+     - xcube
+     - xesmf
+     - xgcm
+     - xhistogram
+     - xmitgcm
+     - xpublish
+     - xrft
+     - xskillscore
+     - zarr
+
+
+Create this environment using mamba
+
+    $ mamba env create -f environment.yml
+
+Activate this environment
+
+    $ conda activate pangeo
+
+This environment should be sufficient for all of your work in this class.
