@@ -18,7 +18,7 @@ repository:
 launch_buttons:
   notebook_interface: jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url: "" # The URL of the BinderHub (e.g., https://mybinder.org)
-  jupyterhub_url: "https://pangeo.2i2c.cloud"
+  jupyterhub_url: "https://https://us-central1-b.gcp.pangeo.io/"
 
 # HTML-specific settings
 html:
