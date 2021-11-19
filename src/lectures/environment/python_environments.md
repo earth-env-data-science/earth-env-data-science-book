@@ -132,7 +132,7 @@ To see all the environments on your system:
 If you want to permanently remove an environment and delete all the data
 associated with it:
 
-    $ conda remove --name my_environment --all
+    $ conda env remove --name my_environment --all
 
 For extensive documentation on using environments, please see
 [the conda documentation](https://conda.io/docs/using/envs.html). The most
