@@ -14,6 +14,7 @@ parts:
   - file: assignments/files_markdown_git
   - file: lectures/environment/python_environments
   - file: lectures/environment/binder
+  - file: lectures/data
 
 - caption: The Core Python Language
   chapters:
