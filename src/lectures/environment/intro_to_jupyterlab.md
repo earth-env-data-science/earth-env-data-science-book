@@ -30,8 +30,8 @@ Here are some useful references on Markdown syntax.
 
 ## Our Course JupyterHub
 
-[JupyterHub](https://jupyter.org/hub is multi-user Jupyter environment designed for companies, classrooms and research labs.
+[JupyterHub](https://jupyter.org/hub) is multi-user Jupyter environment designed for companies, classrooms and research labs.
 The Columbia version of this course uses a cloud-based JupyterHub environment
 managed by [2i2c](https://2i2c.org/infrastructure/):
 
-[![Launch JupyterHub](https://img.shields.io/badge/jupyterhub-pangeo.2i2c.cloud-orange?style=for-the-badge&logo=jupyter)](https://pangeo.2i2c.cloud/)
+[![Launch JupyterHub](https://img.shields.io/badge/jupyterhub-us--central1--b.gcp.pangeo.io-orange?style=for-the-badge&logo=jupyter)]([https://pangeo.2i2c.cloud/](https://us-central1-b.gcp.pangeo.io/))
