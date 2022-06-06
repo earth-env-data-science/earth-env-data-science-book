@@ -59,40 +59,34 @@ Revert a file to an earlier version:
 
     git checkout <commit tag> <filenames>
 
-## Setting Up GitHub SSH Keys inside JupyterHub
+## Using Git / GitHub from remote JupyterHub
 
-```{warning}
-As of August 12, 2021, GitHub [no longer supports username / password authentication](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/).
-Users must switch to personal access tokens or SSH-keys for authentication.
+The recommended way to move code in and out of a remote hub is via git / GitHub.
+You should clone your project repo from the terminal and use git pull / git push to update and push changes.
+In order to push data to GitHub from the hub, you will need to set up GitHub authentication.
+[gh-scoped-creds](https://github.com/yuvipanda/gh-scoped-creds/) should be already setup
+on your 2i2c managed JupyterHub, and we shall use that to authenticate to GitHub for
+push / pull access.
+
+Open a terminal in JupyterHub, run `gh-scoped-creds` and follow the prompts.
+
+Alternatively, in a notebook, run the following code and follow the prompts:
+
+```
+import gh_scoped_creds
+%ghscopedcreds
 ```
 
-This is a very quick guide to getting your GitHub authentication set up,
-adopted from the [Carpentries GitHub Remotes lesson](https://swcarpentry.github.io/git-novice/07-github/index.html#ssh-background-and-setup).
+You should now be able to push to GitHub from the hub! These credentials will expire after
+8 hours (or whenever your JupyterHub server stops), and you'll have to repeat these steps
+to fetch a fresh set of credentials. Once you authenticate, you'll be provided with a link
+to a [GitHub App](https://docs.github.com/en/developers/apps/getting-started-with-apps/about-apps)
+that you have to [install](https://docs.github.com/en/developers/apps/managing-github-apps/installing-github-apps)
+on the repositories you want to be able to push to from this particular JupyterHub. You only
+need to do this once per JupyterHub, and can revoke access any time. You can always provide
+access to your own personal repositories, but might need approval from admins of GitHub
+organizations if you want to push to repos in that organization.
 
-1. Open a terminal in JupyterHub
-1. Type the command
-   ```
-   ssh-keygen -t ed25519 -C "YOUR EMAIL ADDRESS GOES HERE"`
-   ```
-   (Don't just copy this text; you have to put in tour actual email address in between the quotes.) This command will create an ssh public / private key pair.
-1. Enter a password for your new SSH key and record it in a safe place.
-   This password is used to "lock" the SSH key. It can't be used without the password.
-1. Type the command
-   ```
-   cat ~/.ssh/id_ed25519.pub
-   ```
-   and copy the result. It should look something like `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJOMg813PWuWX/ilyexj2k/di1lBHwQHCHbRB6l4dV9K rpa@ldeo.columbia.edu`. (Note that this is my _real_ public key, but it is completely
-   safe to share. Without the corresponding private key it is useless.)
-1. Go to <https://github.com/settings/keys>. Click the green  button that says "New SSH Key".
-   Give your key the title "JupyterHub SSH Key for Research Computing" and paste the
-   public key from the previous step into the "Key" box.
-1. Verify that your key works by typing
-   ```
-   ssh -T git@github.com
-   ```
-   on the command like of the JupyterHub. (Note you will have to enter your SSH key password from step 3.)
-
-You should now be able to push to GitHub.
 
 ## Collaborating with Git and Github
 
