@@ -35,3 +35,12 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
+
+sphinx:
+  extra_extensions:
+  - sphinxext.opengraph
+  config:
+    ogp_site_url: "https://earth-env-data-science.github.io/"
+    ogp_image: "https://earth-env-data-science.github.io/_static/eeds-logo.png"
+    ogp_description_length: 200
+    ogp_use_first_image: true
