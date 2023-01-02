@@ -51,7 +51,7 @@ parts:
   - file: lectures/mapping_cartopy
   - file: assignments/cartopy
 
-- caption: Climate Models
+- caption: Climate Model Data
   chapters:
   - file: lectures/models/intro_models
   - file: lectures/models/cmip
