@@ -1,0 +1,16 @@
+name: earth-env-data-science-book
+channels:
+    - conda-forge
+dependencies:
+  - xarray
+  - xmip
+  - cf_xarray # remove once https://github.com/jbusecke/xMIP/issues/274 is fixed
+  - gcsfs
+  - intake-esm
+  - matplotlib
+  - nc-time-axis
+  - numpy
+  - jupyterlab
+  - pip
+  - pip:
+    - -r requirements.txt
