@@ -4,8 +4,8 @@
 
 This book grew out of a course developed at Columbia University called _Research Computing in Earth Science_.
 It was written mostly by [Ryan Abernathey](https://rabernat.github.io), with significant contributions from
-[Kerry Key](https://emlab.ldeo.columbia.edu/index.php/team/kerry-key/) and
-[Tim Crone](https://github.com/tjcrone).
+[Kerry Key](https://emlab.ldeo.columbia.edu/index.php/team/kerry-key/), 
+[Tim Crone](https://github.com/tjcrone), and [Julius Busecke](https:www.juliusbusecke.com).
 By separating the book from the class, we hope to create an open-source community resource for Python education
 in the Earth and Environmental Sciences.
 

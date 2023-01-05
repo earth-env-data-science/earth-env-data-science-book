@@ -50,7 +50,13 @@ parts:
   chapters:
   - file: lectures/mapping_cartopy
   - file: assignments/cartopy
-  - file: lectures/working_with_gcm_data
+
+- caption: Climate Model Data
+  chapters:
+  - file: lectures/models/intro_models
+  - file: lectures/models/cmip
+  - file: lectures/models/regridding
+  - file: lectures/models/xgcm
 
 - caption: Big Data
   chapters:
