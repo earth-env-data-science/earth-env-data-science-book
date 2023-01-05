@@ -11,7 +11,7 @@ parts:
   - file: lectures/environment/intro_to_jupyterlab
   - file: lectures/environment/intro_to_unix
   - file: lectures/environment/intro_to_git
-  - file: assignments/files_markdown_git
+  - file:  assignments/files_markdown_git
   - file: lectures/environment/python_environments
   - file: lectures/environment/binder
   - file: lectures/data
@@ -55,6 +55,7 @@ parts:
   chapters:
   - file: lectures/models/intro_models
   - file: lectures/models/cmip
+  - file: assignments/cmip
   - file: lectures/models/regridding
   - file: lectures/models/xgcm
 
